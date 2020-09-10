@@ -13,22 +13,23 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('../../database/db.json', {
+    fetch('/api/grades', {
       method: 'GET'
     })
       .then(res => res.json())
-      .then(data => this.setState({ grades: data }));
-  }
+      .then(data => this.setState({ grades: data })
+        // console.log(this.data)
+      );
 
-  // const myGrades = this.state.grades.map(grades => {
-  //   <tr key={grades.name}>
-  //     <td key={grades}>{grades.name}</td>
-  //     <td key={grades}>{grades.course}</td>
-  //     <td key={grades}>{grades.grade}</td>
-  //   </tr>
-  // });
+  }
+  /* <tr key={this.state.grades.name}>
+<td key={this.state.grades}>{this.state.grades.name}</td>
+<td key={this.state.grades}>{this.state.grades.course}</td>
+<td key={this.state.grades}>{this.state.grades.grade}</td>
+</tr>  */
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         <Header />
