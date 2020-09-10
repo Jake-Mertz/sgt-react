@@ -1,5 +1,5 @@
 import React from 'react';
-// import Header from 'header.jsx';
+import Header from 'header.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>Header</div>
+      <div><Header /></div>
     );
   }
 }
