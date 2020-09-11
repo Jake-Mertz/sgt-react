@@ -1,12 +1,16 @@
-import React from 'react';
+// import React from 'react';
+// import GradeTable from './GradeTable';
+// import App from './app';
 
 function Grade(props) {
+  // console.log(props);
   return (
-    <tr element={props}>
-      <td>{this.state.grades.name}</td>
-      <td>{this.state.grades.course}</td>
-      <td>{this.state.grades.grade}</td>
-    </tr>
+    // <tr>
+    //   <td>{props.grades.name}</td>
+    //   <td>{props.grades.course}</td>
+    //   <td>{props.grades.grade}</td>
+    // </tr>
+    null
   );
 }
 

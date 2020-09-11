@@ -1,7 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom'
 import Header from './header';
-// import Grade from './grade';
+// import Grade from './Grade';
 import GradeTable from './GradeTable';
 
 class App extends React.Component {
@@ -10,6 +10,8 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    // console.log(props);
+    // console.log(this.state.grades);
   }
 
   componentDidMount() {
@@ -18,22 +20,17 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(data => this.setState({ grades: data })
-        // console.log(this.data)
+        // console.log(data)
       );
-
   }
-  /* <tr key={this.state.grades.name}>
-<td key={this.state.grades}>{this.state.grades.name}</td>
-<td key={this.state.grades}>{this.state.grades.course}</td>
-<td key={this.state.grades}>{this.state.grades.grade}</td>
-</tr>  */
 
   render() {
     // console.log(this.props);
+    // console.log(this.state);
     return (
       <div>
         <Header />
-        <GradeTable grades={this.state.grades} />
+        <GradeTable theData={this.state.grades} />
       </div>
     );
   }
