@@ -8,7 +8,6 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
-    // console.log(props);
     // console.log(this.state.grades);
   }
 
@@ -22,6 +21,10 @@ class App extends React.Component {
       .then(data => {
         this.setState({ grades: data });
       });
+  }
+
+  getAverageGrade() {
+
   }
 
   render() {
@@ -41,5 +44,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// theData = { this.state.grades }
