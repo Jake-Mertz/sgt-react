@@ -1,52 +1,26 @@
-// import React from 'react';
-// import Grade from './Grade';
-// import App from './app';
+import React from 'react';
+import Grade from './Grade';
 
-// function GradeTable(props) {
-//   // console.log(<Grade/>);
-//   console.log(props);
-//   return (
-//         <table className="gradeTable"><Grade myData={props.grades}/>
-//             props.grades.map(myGrades => {
-//       return (
-//           <th></th>
-//           <tbody>
-//             <tr>
-//               <td key={myGrades.name}></td>
-//               <td key={myGrades.course}></td>
-//               <td key={myGrades.grade}></td>
-//             </tr>
-//           </tbody>
-//           </table>
-//             );
-//           )
-//         }
-//       }
-//       }
+function GradeTable(props) {
+  const gradeElements = props.grades.map(gradeData => {
+    const { id, name, course, grade } = gradeData;
+    return <Grade key={id} name={name} course={course} grade={grade}/>;
+  });
 
-// function GradeTable(props) {
-//   return (
-//     <table className="gradeTable">
-//       {
-//         props.grades.map(theGrades => {
-//         // return (
-//         // <th></th>
-//         return (
-//         <Grade
-//           <tbody>
-//             <tr>
-//               <td key={props.grades.name}></td>
-//               <td key={props.grades.course}></td>
-//               <td key={props.grades.grade}></td>
-//             </tr>
-//           </tbody>
-//           />
-//         // );
-//         })
-//       }
-//     </table>
-//   );
-//   )
-// }
+  return (
+    <table className="table table-striped">
+      <thead>
+        <tr className="bg-light">
+          <th>Name</th>
+          <th>Course</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {gradeElements}
+      </tbody>
+    </table>
+  );
+}
 
-// export default GradeTable;
+export default GradeTable;

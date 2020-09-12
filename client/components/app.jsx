@@ -1,7 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom'
 import Header from './header';
-// import Grade from './Grade';
 import GradeTable from './GradeTable';
 
 class App extends React.Component {
@@ -15,25 +13,33 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/grades', {
-      method: 'GET'
-    })
+    this.getGrades();
+  }
+
+  getGrades() {
+    fetch('/api/grades')
       .then(res => res.json())
-      .then(data => this.setState({ grades: data })
-        // console.log(data)
-      );
+      .then(data => {
+        this.setState({ grades: data });
+      });
   }
 
   render() {
+
+    const { grades } = this.state;
+    // const grades = this.state.grades;
+
     // console.log(this.props);
     // console.log(this.state);
     return (
-      <div>
+      <div className="container">
         <Header />
-        <GradeTable theData={this.state.grades} />
+        <GradeTable grades={grades} />
       </div>
     );
   }
 }
 
 export default App;
+
+// theData = { this.state.grades }
