@@ -40,11 +40,11 @@ class App extends React.Component {
 
   getAverageGrade(props) {
     // console.log(this.props.state.grades);
-    let sum;
-    for (let i = 0; i < this.grades.length; i++) {
+    let sum = 0;
+    for (let i = 0; i < this.state.grades.length; i++) {
       sum += this.state.grades[i].grade;
     }
-    const average = sum / this.grades.length;
+    const average = sum / this.state.grades.length;
     const averageRounded = Math.floor(average);
     return averageRounded;
   }
@@ -58,7 +58,7 @@ class App extends React.Component {
     // console.log(this.state);
     return (
       <div className="container">
-        <Header average={this.averageRounded}/>
+        <Header average={this.getAverageGrade()}/>
         <GradeTable grades={grades} />
       </div>
     );
