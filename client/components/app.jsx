@@ -10,6 +10,9 @@ class App extends React.Component {
       grades: []
     };
     // console.log(this.state.grades);
+    this.addGrade = this.addGrade.bind(this);
+    this.getGrades = this.getGrades.bind(this);
+    this.getAverageGrade = this.getAverageGrade.bind(this);
   }
 
   componentDidMount() {
@@ -76,7 +79,7 @@ class App extends React.Component {
       <div className="container">
         <Header average={this.getAverageGrade()}/>
         <GradeTable grades={grades} />
-        <GradeForm grade={this.props.newGrade} />
+        <GradeForm grade={this.props.newGrade} addGrade={this.addGrade}/>
       </div>
     );
   }
