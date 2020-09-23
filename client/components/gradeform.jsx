@@ -26,6 +26,7 @@ class GradeForm extends React.Component {
   }
 
   handleReset() {
+    event.preventDefault();
     this.setState({ name: '', course: '', grade: '' });
   }
 
